@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flexbox Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-container .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #ddd;
+        }
+
+        /* Main Content */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            gap: 2rem;
+        }
+
+        .main-content {
+            flex: 2;
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Media Queries */
+        /* Mobile (up to 600px) */
+        @media (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                margin-top: 1rem;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .main-content, .sidebar {
+                flex: 1;
+            }
+        }
+
+        /* Tablet (601px to 900px) */
+        @media (min-width: 601px) and (max-width: 900px) {
+            .nav-links li {
+                margin-left: 1rem;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .main-content, .sidebar {
+                flex: 1;
+            }
+        }
+
+        /* Desktop (901px and above) */
+        @media (min-width: 901px) {
+            .container {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">MySite</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <h1>Welcome to MySite</h1>
+            <p>This is the main content area, styled with Flexbox for a responsive layout. It adjusts beautifully across different screen sizes.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </main>
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>This is the sidebar content. It provides additional information or links.</p>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 MySite. All rights reserved.</p>
+    </footer>
+</body>
+</html>
